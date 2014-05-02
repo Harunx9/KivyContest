@@ -1,0 +1,43 @@
+<StartScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 100,100,100,100
+        Label:
+            text: 'Family Quiz'
+        Button: 
+            on_press: root.manager.current = 'chooser'
+            Image:
+                source:'graphics/Start.png'
+                y: self.parent.y
+                x: self.parent.x
+                size: self.parent.width, self.parent.height
+                allow_stretch: True
+
+<ChooseQuiz>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50,100
+        spacing: 20
+        Button:
+            text: 'biology'
+            on_press: root.setOption(self.text); root.manager.current = 'play' 
+        Button:
+            text: 'history'
+            on_press: root.manager.current = 'play'
+        Button:
+            text: 'math'
+            on_press: root.managet.current = 'play'
+        Button:
+            text: 'geography'
+            on_press: root.manager.current = 'play'
+
+<PlayWidget>:
+    BoxLayout:
+        Label:
+            text: root.current_q_text
+
+<PlayScreen>:
+    quiz: id_q
+    PlayWidget:
+        id: id_q
+         

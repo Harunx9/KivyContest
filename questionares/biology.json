@@ -1,0 +1,22 @@
+{
+    "questionare":[
+        {
+            "text" : "text 1",
+            "answers" : {
+                "answ1" : "True",
+                "answ2" : "False",
+                "answ3" : "False",
+                "answ4" : "False"
+            }
+        },
+        {
+        "text" : "text 2",
+            "answers" : {
+                "answ1" : "False",
+                "answ2" : "True",
+                "answ3" : "False",
+                "answ4" : "False"
+            }
+        }     
+    ]
+}
