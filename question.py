@@ -1,4 +1,4 @@
-from json import load,dump 
+from json import load 
 
 class Question(object):
     def __init__(self, question):
@@ -18,6 +18,9 @@ class Questionare(object):
     def getQuestionById(self, index):
         return Question(question=
                 self.questions[index])
+    
+    def getQuestionsCount(self):
+        return len(self.questions)
 
 def openQuestionareJson(path):
     with open(path) as data_file:
@@ -35,3 +38,5 @@ def parseJsonToQuestionare(json_dict):
     #print qe.getText()
     #for key, val in qe.getAnswers().iteritems():
     #    print key , val
+    #ky = qe.getAnswers().keys()
+    #print ky

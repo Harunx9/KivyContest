@@ -1,4 +1,7 @@
 <StartScreen>:
+    Image:
+        source: 'graphics/Background.png'
+        
     BoxLayout:
         orientation: 'vertical'
         padding: 100,100,100,100
@@ -6,6 +9,7 @@
             text: 'Family Quiz'
         Button: 
             on_press: root.manager.current = 'chooser'
+            size_hint: .5, .6
             Image:
                 source:'graphics/Start.png'
                 y: self.parent.y
@@ -23,21 +27,45 @@
             on_press: root.setOption(self.text); root.manager.current = 'play' 
         Button:
             text: 'history'
-            on_press: root.manager.current = 'play'
+            on_press: root.setOption(self.text); root.manager.current = 'play'
         Button:
             text: 'math'
-            on_press: root.managet.current = 'play'
+            on_press: root.setOption(self.text); root.managet.current = 'play'
         Button:
             text: 'geography'
-            on_press: root.manager.current = 'play'
+            on_press: root.setOption(self.text); root.manager.current = 'play'
 
 <PlayWidget>:
     BoxLayout:
+        orientation: 'vertical'
+        size: root.size
         Label:
             text: root.current_q_text
+        Button: 
+            text: root.current_a_list[0]
+            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
+        Button:
+            text: root.current_a_list[1]
+            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
+        Button:
+            text: root.current_a_list[2]
+            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
+        Button:
+            text: root.current_a_list[3]
+            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
 
 <PlayScreen>:
     quiz: id_q
     PlayWidget:
         id: id_q
          
+<HighScoreScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Correct Answers: ' + str(root.right_answers)
+        Label:
+            text: 'Wrong Answers: ' + str(root.wrong_answers)
+        Button:
+            text: 'To Menu'
+            on_press: root.manager.current = 'menu' 

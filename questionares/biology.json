@@ -3,20 +3,29 @@
         {
             "text" : "text 1",
             "answers" : {
-                "answ1" : "True",
-                "answ2" : "False",
-                "answ3" : "False",
-                "answ4" : "False"
+                "q1answ1" : "True",
+                "q1answ2" : "False",
+                "q1answ3" : "False",
+                "q1answ4" : "False"
             }
         },
         {
-        "text" : "text 2",
+            "text" : "text 2",
             "answers" : {
-                "answ1" : "False",
-                "answ2" : "True",
-                "answ3" : "False",
-                "answ4" : "False"
+                "q2answ1" : "False",
+                "q2answ2" : "True",
+                "q2answ3" : "False",
+                "q2answ4" : "False"
             }
-        }     
+        },
+        {
+            "text" : "text 3",
+            "answers" : {
+                "q3answ1" : "False",
+                "q3answ2" : "False",
+                "q3answ3" : "True",
+                "q4answ4" : "False"
+            }
+        } 
     ]
 }
