@@ -83,10 +83,12 @@ class HighScoreScreen(Screen):
         self.manager.wrong_answers = self.wrong_answers
 
 class QuizApp(App):
-    def build (self):
-        Config.set('graphics', 'widht', 745)
-        Config.set('graphics', 'height', 1049)
+    def build_config(self, config):
+        Config.set('graphics', 'width', 600)
+        Config.set('graphics', 'height', 800)
         Config.set('graphics', 'resizable', 0)
+
+    def build (self):
         sm = ScreenManager()
         sm.right_answers = NumericProperty(0)
         sm.wrong_answers = NumericProperty(0)

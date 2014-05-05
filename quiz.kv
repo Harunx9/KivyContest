@@ -1,7 +1,6 @@
 <StartScreen>:
     Image:
-        source: 'graphics/Background.png'
-        
+        source: 'graphics/background.png' 
     BoxLayout:
         orientation: 'vertical'
         padding: 100,100,100,100
@@ -9,38 +8,44 @@
             text: 'Family Quiz'
         Button: 
             on_press: root.manager.current = 'chooser'
-            size_hint: .5, .6
-            Image:
-                source:'graphics/Start.png'
-                y: self.parent.y
-                x: self.parent.x
-                size: self.parent.width, self.parent.height
-                allow_stretch: True
+            size_hint: .6,.4
+            pos_hint: {'center_x': 0.25}
+            background_normal: 'graphics/start.png'
 
 <ChooseQuiz>:
-    BoxLayout:
-        orientation: 'vertical'
-        padding: 50,100
+    Image:
+        source: 'graphics/background.png'
+    GridLayout:
+        cols: 2
+        rows: 2
+        padding: 150,150
         spacing: 20
         Button:
-            text: 'biology'
-            on_press: root.setOption(self.text); root.manager.current = 'play' 
+            name: 'biology'
+            background_normal: 'graphics/biology.png'
+            on_press: root.setOption(self.name); root.manager.current = 'play' 
         Button:
-            text: 'history'
-            on_press: root.setOption(self.text); root.manager.current = 'play'
+            name: 'history'
+            background_normal: 'graphics/history.png'
+            on_press: root.setOption(self.name); root.manager.current = 'play'
         Button:
-            text: 'math'
-            on_press: root.setOption(self.text); root.managet.current = 'play'
+            name: 'math'
+            background_normal: 'graphics/math.png'
+            on_press: root.setOption(self.name); root.managet.current = 'play'
         Button:
-            text: 'geography'
-            on_press: root.setOption(self.text); root.manager.current = 'play'
+            name: 'geography'
+            background_normal: 'graphics/geography.png'
+            on_press: root.setOption(self.name); root.manager.current = 'play'
 
 <PlayWidget>:
+    Image:
+        source: 'graphics/background.png'
     BoxLayout:
-        orientation: 'vertical'
         size: root.size
+        orientation: 'vertical'
         Label:
             text: root.current_q_text
+            Image:
         Button: 
             text: root.current_a_list[0]
             on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
@@ -60,6 +65,8 @@
         id: id_q
          
 <HighScoreScreen>:
+    Image:
+        source: 'graphics/background.png'
     BoxLayout:
         orientation: 'vertical'
         Label:

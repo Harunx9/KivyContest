@@ -29,14 +29,3 @@ def openQuestionareJson(path):
 
 def parseJsonToQuestionare(json_dict):
     return Questionare (questions= json_dict['questionare'])
-
-
-#if __name__ == '__main__':
-    #js = openQuestionareJson('questionares/biology.json')
-    #q = parseJsonToQuestionare(js);
-    #qe= q.getQuestionById(1)
-    #print qe.getText()
-    #for key, val in qe.getAnswers().iteritems():
-    #    print key , val
-    #ky = qe.getAnswers().keys()
-    #print ky
