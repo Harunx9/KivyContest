@@ -3,19 +3,26 @@
         source: 'graphics/background.png' 
     BoxLayout:
         orientation: 'vertical'
-        padding: 100,100,100,100
-        Label:
-            text: 'Family Quiz'
+        padding: 100,50,100,100
+        spacing: 300
+        Image:
+            pos_hint: {'top': 0.9}
+            source: 'graphics/logo.png'
         Button: 
-            on_press: root.manager.current = 'chooser'
-            size_hint: .6,.4
+            on_press: root.onClickSound(); root.manager.current = 'chooser'
+            size_hint: 0.8, 0.7
             pos_hint: {'center_x': 0.25}
             background_normal: 'graphics/start.png'
+            background_down: 'graphics/start_down.png'
     Image:
         id: owl
-        pos: 580 - self.width, 800 * 0.3
+        pos: 510 - self.width, 800 * 0.3 - 25
         size_hint: 0.3, 0.3
         source: 'graphics/owl.png'
+    Image:
+        id: questions
+        pos: 150,400
+        source:'graphics/questionmarks.png'
 
 <ChooseQuiz>:
     Image:
@@ -26,26 +33,27 @@
         padding: 100,200
         spacing: 30
         Button:
+            id: biology
             name: 'biology'
+            size_hint: 1.0,1.0
             background_normal: 'graphics/biology.png'
             background_down: 'graphics/biology_down.png'
-            on_press: root.animateButtons(self)
-            on_release: root.setOption(self.name); root.manager.current = 'play' 
+            on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play' 
         Button:
             name: 'history'
             background_normal: 'graphics/history.png'
             background_down: 'graphics/history_down.png'
-            on_press: root.setOption(self.name); root.manager.current = 'play'
+            on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play'
         Button:
             name: 'math'
             background_normal: 'graphics/math.png'
             background_down: 'graphics/math_down.png'
-            on_press: root.setOption(self.name); root.managet.current = 'play'
+            on_press: root.onClickSound(); root.setOption(self.name); root.managet.current = 'play'
         Button:
             name: 'geography'
             background_normal: 'graphics/geography.png'
             background_down: 'graphics/geography_down.png'
-            on_press: root.setOption(self.name); root.manager.current = 'play'
+            on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play'
 
 <PlayWidget>:
     Image:
@@ -68,6 +76,7 @@
             background_normal: 'graphics/ButtonAup.png'
             background_down: 'graphics/ButtonAdown.png'
             on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
+            on_release: root.releaseSound()
         Button:
             text: root.current_a_list[1] 
             color: 0,0,0,1
@@ -75,7 +84,8 @@
             size_hint_y: 0.9            
             background_normal: 'graphics/ButtonBup.png'
             background_down: 'graphics/ButtonBdown.png'       
-            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
+            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter(); 
+            on_release: root.releaseSound()
         Button:
             text: root.current_a_list[2] 
             color: 0,0,0,1
@@ -83,7 +93,8 @@
             background_normal: 'graphics/ButtonCup.png'
             background_down: 'graphics/ButtonCdown.png'
             size_hint_y: 0.9
-            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
+            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter(); 
+            on_release: root.releaseSound()
         Button:
             text: root.current_a_list[3]
             color: 0,0,0,1
@@ -91,7 +102,9 @@
             background_normal: 'graphics/ButtonDup.png'
             background_down: 'graphics/ButtonDdown.png' 
             size_hint_y: 0.9
-            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
+            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter(); 
+            on_release: root.releaseSound()
+
 
 <PlayScreen>:
     quiz: id_q
@@ -114,6 +127,8 @@
             color: 0,0,0,1
             font_size: 40
         Button:
+            pos_hint: {'center_x': 0.25}
+            size_hint: 0.8,0.7
             background_normal: 'graphics/back_up.png'
             background_down: 'graphics/back_down.png'
-            on_press: root.manager.current = 'menu' 
+            on_press: root.onClickSound(); root.manager.current = 'menu' 
