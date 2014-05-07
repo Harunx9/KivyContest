@@ -11,6 +11,11 @@
             size_hint: .6,.4
             pos_hint: {'center_x': 0.25}
             background_normal: 'graphics/start.png'
+    Image:
+        id: owl
+        pos: 580 - self.width, 800 * 0.3
+        size_hint: 0.3, 0.3
+        source: 'graphics/owl.png'
 
 <ChooseQuiz>:
     Image:
@@ -18,45 +23,74 @@
     GridLayout:
         cols: 2
         rows: 2
-        padding: 150,150
-        spacing: 20
+        padding: 100,200
+        spacing: 30
         Button:
             name: 'biology'
             background_normal: 'graphics/biology.png'
-            on_press: root.setOption(self.name); root.manager.current = 'play' 
+            background_down: 'graphics/biology_down.png'
+            on_press: root.animateButtons(self)
+            on_release: root.setOption(self.name); root.manager.current = 'play' 
         Button:
             name: 'history'
             background_normal: 'graphics/history.png'
+            background_down: 'graphics/history_down.png'
             on_press: root.setOption(self.name); root.manager.current = 'play'
         Button:
             name: 'math'
             background_normal: 'graphics/math.png'
+            background_down: 'graphics/math_down.png'
             on_press: root.setOption(self.name); root.managet.current = 'play'
         Button:
             name: 'geography'
             background_normal: 'graphics/geography.png'
+            background_down: 'graphics/geography_down.png'
             on_press: root.setOption(self.name); root.manager.current = 'play'
 
 <PlayWidget>:
     Image:
+        size: root.size
         source: 'graphics/background.png'
     BoxLayout:
         size: root.size
         orientation: 'vertical'
+        padding:150,100
+        spacing: 10
         Label:
             text: root.current_q_text
-            Image:
+            color: 0,0,0,1
+            font_size: 24
         Button: 
             text: root.current_a_list[0]
+            color: 0,0,0,1 
+            font_size: 20
+            size_hint_y: 0.9 
+            background_normal: 'graphics/ButtonAup.png'
+            background_down: 'graphics/ButtonAdown.png'
             on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
         Button:
-            text: root.current_a_list[1]
+            text: root.current_a_list[1] 
+            color: 0,0,0,1
+            font_size: 20 
+            size_hint_y: 0.9            
+            background_normal: 'graphics/ButtonBup.png'
+            background_down: 'graphics/ButtonBdown.png'       
             on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
         Button:
-            text: root.current_a_list[2]
+            text: root.current_a_list[2] 
+            color: 0,0,0,1
+            font_size: 20
+            background_normal: 'graphics/ButtonCup.png'
+            background_down: 'graphics/ButtonCdown.png'
+            size_hint_y: 0.9
             on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
         Button:
             text: root.current_a_list[3]
+            color: 0,0,0,1
+            font_size: 20 
+            background_normal: 'graphics/ButtonDup.png'
+            background_down: 'graphics/ButtonDdown.png' 
+            size_hint_y: 0.9
             on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
 
 <PlayScreen>:
@@ -68,11 +102,18 @@
     Image:
         source: 'graphics/background.png'
     BoxLayout:
+        spacing: 10
+        padding: 100,100
         orientation: 'vertical'
         Label:
             text: 'Correct Answers: ' + str(root.right_answers)
+            color: 0,0,0,1
+            font_size: 40
         Label:
             text: 'Wrong Answers: ' + str(root.wrong_answers)
+            color: 0,0,0,1
+            font_size: 40
         Button:
-            text: 'To Menu'
+            background_normal: 'graphics/back_up.png'
+            background_down: 'graphics/back_down.png'
             on_press: root.manager.current = 'menu' 

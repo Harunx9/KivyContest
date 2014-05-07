@@ -11,6 +11,7 @@ from kivy.properties import ObjectProperty, NumericProperty,StringProperty,\
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.config import Config
+from kivy.animation import Animation
 import question
 
 class PlayWidget(Widget):
@@ -38,11 +39,22 @@ class PlayWidget(Widget):
             self.parent.countScore()
         
 class StartScreen(Screen):
-    pass
+    def on_pre_enter(self):
+        self.bounce = Animation(size_hint= (0.35, 0.35))\
+                + Animation(size_hint= (0.3,0.3))
+        self.bounce.repeat = True
+        self.bounce.start(self.ids.owl)
+    def on_leave(self):
+        self.bounce.cancel(self.ids.owl)
 
 class ChooseQuiz(Screen):
     def setOption(self, text):
         self.parent.option = text
+
+    def animateButtons(self, widget):
+        self.bounce = Animation(size = (0.9,0.9))\
+                        + Animation(size= (1.0,1.0))
+        self.bounce.start(widget)
 
 class PlayScreen(Screen):
     quiz = ObjectProperty(None)
