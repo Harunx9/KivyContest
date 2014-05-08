@@ -1,31 +1,94 @@
 {
     "questionare":[
         {
-            "text" : "sa dasd sadha skjd hkal sjdhl askhd lakshd sdasdasd \n sadasdasd sadasdasd asdasdasd sadasdasd asdasdas ",
+            "text" : "The biggest (heaviest) animal in the world is:",
             "answers" : {
-                "q1answ1" : "True",
-                "q1answ2" : "False",
-                "q1answ3" : "False",
-                "q1answ4" : "False"
+                "a blue whale" : "True",
+                "an elephant" : "False",
+                "a rhino" : "False",
+                "a hippo" : "False"
             }
         },
         {
-            "text" : "text 2",
+            "text" : "How much of your body is water?",
             "answers" : {
-                "q2answ1" : "False",
-                "q2answ2" : "True",
-                "q2answ3" : "False",
-                "q2answ4" : "False"
+                "1/3" : "False",
+                "1/2" : "False",
+                "2/3" : "True",
+                "3/4" : "False"
             }
         },
         {
-            "text" : "text 3",
+            "text" : "Who constructed the first microscope?",
             "answers" : {
-                "q3answ1" : "False",
-                "q3answ2" : "False",
-                "q3answ3" : "True",
-                "q4answ4" : "False"
+                "Nicolas Copernicus" : "False",
+                "Robert Hook" : "True",
+                "Louis Pasteur" : "False",
+                "Leonardo da Vinci" : "False"
             }
-        } 
+        }, 
+        {
+            "text" : "Which of these animals has\nthe best sense of smell?",
+            "answers" : {
+                "an eel" : "True",
+                "a dog" : "False",
+                "a lynx" : "False",
+                "a roe-deer" : "False"
+            }
+        },
+        {
+            "text" : "What is amber?",
+            "answers" : {
+                "solidified \ntree resin" : "True",
+                "a piece of\nunderwater rock" : "False",
+                "fossilized remains\nof dead organisms" : "False",
+                "solidifed \nlava from\nunderwater\nvolcanoes" : "False"
+            }
+        },
+        {
+            "text" : "During the sleep a human’s\nbreathing frequency drops by:",
+            "answers" : {
+                "1/2" : "False",
+                "1/3" : "False",
+                "1/4" : "True",
+                "1/5" : "False"
+            }
+        },
+        {
+            "text" : "Which one is incorrect?\nAll insects have:",
+            "answers" : {
+                "a pair of antennae\non top of a head" : "False",
+                "six legs" : "False",
+                "the three main\nparts of the body:\na head, a torso,\nan abdomen" : "False",
+                "two pairs of wings" : "True"
+            }
+        },
+        {
+            "text" : "Which insect is capable of\nseeing ultraviolet light?",
+            "answers" : {
+                "a mosquito" : "False",
+                "a housefly" : "Fasle",
+                "a fruit fly" : "False",
+                "a bee" : "True"
+            }
+        },
+        {
+            "text" : "Mammals are warm-blooded, however, to maintain\ntheir body temperature, they must:",
+            "answers" : {
+                "live in high\ntemperatures\natmosphere" : "False",
+                "run a very\nactive lifestyle" : "False",
+                "have a hairy body" : "False",
+                "eat regularly" : "True"
+            }
+        },
+        {
+            "text" : "Ants can carry weight that is:",
+            "answers" : {
+                "twice\ntheir weight" : "False",
+                "quintuple\ntheir weight " : "False",
+                "ten times\ntheir weight" : "False",
+                "fifty times\ntheir weight" : "True"
+            }
+        }
     ]
 }

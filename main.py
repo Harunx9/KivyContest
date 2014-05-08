@@ -19,8 +19,8 @@ class PlayWidget(Widget):
     current_question = NumericProperty(0)
     current_q_text = StringProperty('')
     current_a_list = ListProperty(['a','a','a','a'])
-    correct_sound = SoundLoader.load('sound/Fuzzy Beep-SoundBible.com-1580329899.wav')
-    wrong_sound = SoundLoader.load('sound/Computer Error-SoundBible.com-399240903.wav')
+    correct_sound = SoundLoader.load('sound/Ta Da-SoundBible.com-1884170640.mp3')
+    wrong_sound = SoundLoader.load('sound/dun_dun_dun-Delsym-719755295.mp3')
 
     def depackQuestionary(self, quiz_type):
         self.path = 'questionares/'+ quiz_type +'.json'
@@ -44,14 +44,21 @@ class PlayWidget(Widget):
             self.current_question = 0
             self.parent.countScore()
             
-    def releaseSound(self):
-        if self.correct_sound.state == 'play':
-            self.correct_sound.stop()
-        if self.wrong_sound.state == 'play':
-            self.wrong_sound.stop()
+    def changeQuestion(self):
+        while self.correct_sound.state == 'play':
+            self.play_time = self.correct_sound.get_pos()
+            if self.correct_sound.length == self.play_time:
+                self.correct_sound.stop()
+                break
+        while self.wrong_sound.state == 'play':
+            self.play_time = self.wrong_sound.get_pos()
+            if self.wrong_sound.length == self.play_time:
+                self.wrong_sound.stop()
+                break
+        self.parent.on_pre_enter()
 
 class StartScreen(Screen):
-    click_sound = SoundLoader.load('sound/Click2-Sebastian-759472264.mp3')
+    click_sound = SoundLoader.load('sound/Water Drop Low-SoundBible.com-1501529809.mp3')
     
     def on_pre_enter(self):
         self.bounce = Animation(size_hint= (0.35, 0.35))\
@@ -67,7 +74,7 @@ class StartScreen(Screen):
         self.click_sound.play()
 
 class ChooseQuiz(Screen):
-    click_sound = SoundLoader.load('sound/Click2-Sebastian-759472264.mp3')
+    click_sound = SoundLoader.load('sound/Water Drop Low-SoundBible.com-1501529809.mp3')
     
     def setOption(self, text):
         self.parent.option = text
@@ -102,7 +109,7 @@ class PlayScreen(Screen):
 class HighScoreScreen(Screen):
     right_answers = NumericProperty(0)
     wrong_answers = NumericProperty(0)
-    click_sound = SoundLoader.load('sound/Click2-Sebastian-759472264.mp3')
+    click_sound = SoundLoader.load('sound/Water Drop Low-SoundBible.com-1501529809.mp3')
 
     def on_pre_enter(self):
         self.right_answers = self.parent.right_answers

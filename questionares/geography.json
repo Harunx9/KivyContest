@@ -1,0 +1,94 @@
+{
+    "questionare":[
+        {
+            "text" : "The largest desert in the world is the Sahara.\nIt occupies an area equal to:",
+            "answers" : {
+                "Argentina" : "False",
+                "The United States" : "True",
+                "Spain" : "False",
+                "India" : "False"
+            }
+        },
+        {
+            "text" : "Who is a seismologist?",
+            "answers" : {
+                "a person who studies\nlife of insects" : "False",
+                "otherwise called\nMountaineer" : "False",
+                "a person who\ndraws maps" : "False",
+                "a person who\nstudies earthquakes" : "True"
+            }
+        },
+        {
+            "text" : "The circumference of\nthe Earth is equal to:",
+            "answers" : {
+                "1000 km" : "False",
+                "40 000 km" : "True",
+                "60 000 km" : "False",
+                "100 000 km" : "False"
+            }
+        },
+        {
+            "text" : "What city goes the Prime Meridian by?",
+            "answers" : {
+                "New York" : "False",
+                "Prague" : "False",
+                "London" : "True",
+                "Warsaw" : "False"
+            }
+        },
+        {
+            "text" : "The longest river in the world is:",
+            "answers" : {
+                "The Nile" : "True",
+                "The Amazon River" : "False",
+                "The Danube" : "False",
+                "The Ganges" : "False"
+            }
+        },
+        {
+            "text" : "The country most touched\nearthquakes is:",
+            "answers" : {
+                "USA" : "False",
+                "Peru" : "False",
+                "Japan" : "True",
+                "Ecuador" : "False"
+            }
+        },
+        {
+            "text" : "How long does it take Sun rays\nto reach the Earth?",
+            "answers" : {
+                "0,15 s" : "False",
+                "20 s" : "False",
+                "8 min" : "True",
+                "1 h" : "False"
+            }
+        },
+        {
+            "text" : "The fuel used in nuclear plants is:",
+            "answers" : {
+                "uranium" : "True",
+                "coal" : "False",
+                "natural gas" : "False",
+                "pluto" : "False"
+            }
+        },
+        {
+            "text" : "What percentage of the Earth's\nsurface is water?",
+            "answers" : {
+                "29%" : "False",
+                "50%" : "False",
+                "71%" : "True",
+                "90%" : "False"
+            }
+        },
+        {
+            "text" : "In what year did Christopher Columbus\ndiscovered America?",
+            "answers" : {
+                "1152" : "False",
+                "1235" : "False",
+                "1492" : "True",
+                "1502" : "False"
+            }
+        }
+    ]
+}

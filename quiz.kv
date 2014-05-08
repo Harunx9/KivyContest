@@ -48,7 +48,7 @@
             name: 'math'
             background_normal: 'graphics/math.png'
             background_down: 'graphics/math_down.png'
-            on_press: root.onClickSound(); root.setOption(self.name); root.managet.current = 'play'
+            on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play'
         Button:
             name: 'geography'
             background_normal: 'graphics/geography.png'
@@ -71,40 +71,35 @@
         Button: 
             text: root.current_a_list[0]
             color: 0,0,0,1 
-            font_size: 20
+            font_size: 16
             size_hint_y: 0.9 
             background_normal: 'graphics/ButtonAup.png'
             background_down: 'graphics/ButtonAdown.png'
-            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter();
-            on_release: root.releaseSound()
+            on_press: root.onClick(self.text); root.current_question += 1; root.changeQuestion()
         Button:
             text: root.current_a_list[1] 
             color: 0,0,0,1
-            font_size: 20 
+            font_size: 16 
             size_hint_y: 0.9            
             background_normal: 'graphics/ButtonBup.png'
             background_down: 'graphics/ButtonBdown.png'       
-            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter(); 
-            on_release: root.releaseSound()
+            on_press: root.onClick(self.text); root.current_question += 1; root.changeQuestion()
         Button:
             text: root.current_a_list[2] 
             color: 0,0,0,1
-            font_size: 20
+            font_size: 16
             background_normal: 'graphics/ButtonCup.png'
             background_down: 'graphics/ButtonCdown.png'
             size_hint_y: 0.9
-            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter(); 
-            on_release: root.releaseSound()
+            on_press: root.onClick(self.text); root.current_question += 1; root.changeQuestion()
         Button:
             text: root.current_a_list[3]
             color: 0,0,0,1
-            font_size: 20 
+            font_size: 16 
             background_normal: 'graphics/ButtonDup.png'
             background_down: 'graphics/ButtonDdown.png' 
             size_hint_y: 0.9
-            on_press: root.onClick(self.text); root.current_question += 1; root.parent.on_pre_enter(); 
-            on_release: root.releaseSound()
-
+            on_press: root.onClick(self.text); root.current_question += 1; root.changeQuestion()
 
 <PlayScreen>:
     quiz: id_q

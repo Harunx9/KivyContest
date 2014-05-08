@@ -1,0 +1,94 @@
+{
+    "questionare":[
+        {
+            "text" : "How long lasted the first round-the-world\nexpedition led by Ferdinand Magellan?",
+            "answers" : {
+                "6 months" : "False",
+                "1 year" : "False",
+                "3 years" : "True",
+                "5 years" : "False"
+            }
+        },
+        {
+            "text" : "The first artificial satellite was\nsent into space in the year:",
+            "answers" : {
+                "1914" : "False",
+                "1945" : "False",
+                "1957" : "True",
+                "1990" : "False"
+            }
+        },
+        {
+            "text" : "Which country did Germany signed\na non-aggression pact in 1939 with?",
+            "answers" : {
+                "Poland" : "False",
+                "USSR" : "True",
+                "Japan" : "False",
+                "Italy" : "False"
+            }
+        },
+        {
+            "text" : "How many countries participated in World War I?",
+            "answers" : {
+                "7" : "False",
+                "16" : "False",
+                "25" : "False",
+                "33" : "True"
+            }
+        },
+        {
+            "text" : "Who built the first Mercury thermometer?",
+            "answers" : {
+                "Celsius" : "False",
+                "Kelvin" : "False",
+                "Fahrenheit" : "True",
+                "Hook" : "False"
+            }
+        },
+        {
+            "text" : "The first man, who stood on the Moon\nwas Neil Armstrong. This was in the year:",
+            "answers" : {
+                "1952" : "False",
+                "1969" : "True",
+                "1973" : "False",
+                "1975" : "False"
+            }
+        },
+        {
+            "text" : "Which the ancient state has been\nknown for harsh youth education?",
+            "answers" : {
+                "Spatra" : "True",
+                "Greece" : "False",
+                "Egypt" : "False",
+                "Mesopotamia" : "False"
+            }
+        },
+        {
+            "text" : "In what year did the USA joined World War I?",
+            "answers" : {
+                "1914" : "True",
+                "1917" : "False",
+                "1918" : "False",
+                "1939" : "False"
+            }
+        },
+        {
+            "text" : "The first light bulb was made by\nThomas Edison in the year:",
+            "answers" : {
+                "1795" : "False",
+                "1892" : "False",
+                "1879" : "True",
+                "1920" : "False"
+            }
+        },
+        {
+            "text" : "In which year the first modern\nOlympic Games took place?",
+            "answers" : {
+                "1851" : "False",
+                "1896" : "True",
+                "1902" : "False",
+                "1935" : "False"
+            }
+        }
+    ]
+}
