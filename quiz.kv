@@ -28,6 +28,8 @@
     Image:
         source: 'graphics/background.png'
     GridLayout:
+        id: layout
+        size_hint: 0.0, 0.0
         cols: 2
         rows: 2
         padding: 100,200
@@ -35,22 +37,28 @@
         Button:
             id: biology
             name: 'biology'
-            size_hint: 1.0,1.0
+            size_hint: 1.0, 1.0
             background_normal: 'graphics/biology.png'
             background_down: 'graphics/biology_down.png'
             on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play' 
         Button:
+            id: history
             name: 'history'
+            size_hint: 1.0, 1.0
             background_normal: 'graphics/history.png'
             background_down: 'graphics/history_down.png'
             on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play'
         Button:
+            id: math
             name: 'math'
+            size_hint: 1.0, 1.0
             background_normal: 'graphics/math.png'
             background_down: 'graphics/math_down.png'
             on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play'
         Button:
+            id: geography
             name: 'geography'
+            size_hint: 1.0, 1.0
             background_normal: 'graphics/geography.png'
             background_down: 'graphics/geography_down.png'
             on_press: root.onClickSound(); root.setOption(self.name); root.manager.current = 'play'

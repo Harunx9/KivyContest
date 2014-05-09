@@ -72,11 +72,19 @@ class StartScreen(Screen):
 class ChooseQuiz(Screen):
     click_sound = SoundLoader.load('sound/Water Drop Low-SoundBible.com-1501529809.mp3')
     
+    def on_pre_enter(self):
+        self.animate_buttons = Animation(size_hint = (0.0, 0.0))\
+                            + Animation(size_hint = (1.0,1.0))
+        self.animate_buttons.start(self.ids.layout)
+ 
     def setOption(self, text):
         self.parent.option = text
     
     def onClickSound(self):
         self.click_sound.play()
+
+    def on_leave(self):
+        self.animate_buttons.cancel(self.ids.layout)
 
 class PlayScreen(Screen):
     quiz = ObjectProperty(None)
