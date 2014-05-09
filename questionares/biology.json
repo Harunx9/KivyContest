@@ -67,7 +67,7 @@
             "text" : "Which insect is capable of\nseeing ultraviolet light?",
             "answers" : {
                 "a mosquito" : "False",
-                "a housefly" : "Fasle",
+                "a housefly" : "False",
                 "a fruit fly" : "False",
                 "a bee" : "True"
             }

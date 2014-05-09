@@ -23,6 +23,7 @@ class PlayWidget(Widget):
     wrong_sound = SoundLoader.load('sound/dun_dun_dun-Delsym-719755295.mp3')
 
     def depackQuestionary(self, quiz_type):
+        self.current_sound = None
         self.path = 'questionares/'+ quiz_type +'.json'
         self.parsed_json = question.openQuestionareJson(self.path)
         self.questionare = question.parseJsonToQuestionare(self.parsed_json)
@@ -34,29 +35,24 @@ class PlayWidget(Widget):
         self.current_a_list = self.current_answers.keys()[:]
          
     def onClick(self, text):
+        if self.current_sound is not None:
+            if self.current_sound.state is 'play':
+                self.current_sound.stop()
         value = self.current_answers[text]
         self.parent.score.append(value)
         if value == 'True':
-            self.correct_sound.play()
+            self.current_sound = self.correct_sound
+            self.current_sound.play()
         elif value == 'False':
-            self.wrong_sound.play()
+            self.current_sound = self.wrong_sound
+            self.current_sound.play()
         if self.current_question + 1 >= self.questionare.getQuestionsCount():
             self.current_question = 0
             self.parent.countScore()
-            
-    def changeQuestion(self):
-        while self.correct_sound.state == 'play':
-            self.play_time = self.correct_sound.get_pos()
-            if self.correct_sound.length == self.play_time:
-                self.correct_sound.stop()
-                break
-        while self.wrong_sound.state == 'play':
-            self.play_time = self.wrong_sound.get_pos()
-            if self.wrong_sound.length == self.play_time:
-                self.wrong_sound.stop()
-                break
-        self.parent.on_pre_enter()
-
+        else:
+            self.current_question += 1
+            self.parent.on_pre_enter()
+        
 class StartScreen(Screen):
     click_sound = SoundLoader.load('sound/Water Drop Low-SoundBible.com-1501529809.mp3')
     
