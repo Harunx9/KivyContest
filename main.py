@@ -57,6 +57,8 @@ class StartScreen(Screen):
     click_sound = SoundLoader.load('sound/Water Drop Low-SoundBible.com-1501529809.mp3')
     
     def on_pre_enter(self):
+        if self.manager.music.state == 'stop':
+            self.manager.music.play()
         self.bounce = Animation(size_hint= (0.35, 0.35))\
                 + Animation(size_hint= (0.3,0.3))
         self.bounce.repeat = True
@@ -84,6 +86,8 @@ class ChooseQuiz(Screen):
         self.click_sound.play()
 
     def on_leave(self):
+        if self.manager.music.state == 'play':
+            self.manager.music.stop()
         self.animate_buttons.cancel(self.ids.layout)
 
 class PlayScreen(Screen):
@@ -116,6 +120,8 @@ class HighScoreScreen(Screen):
     click_sound = SoundLoader.load('sound/Water Drop Low-SoundBible.com-1501529809.mp3')
 
     def on_pre_enter(self):
+        if self.manager.music.state == 'stop':
+            self.manager.music.play()
         self.right_answers = self.parent.right_answers
         self.wrong_answers = self.parent.wrong_answers
 
@@ -129,6 +135,7 @@ class HighScoreScreen(Screen):
         self.click_sound.play()
 
 class QuizApp(App):
+    menu_music = SoundLoader.load('sound/Klaus_Neumaier_-_Acoustic_Guitar_Changes_5.mp3')
     def build_config(self, config):
         Config.set('graphics', 'width', 600)
         Config.set('graphics', 'height', 800)
@@ -136,6 +143,10 @@ class QuizApp(App):
 
     def build (self):
         sm = ScreenManager()
+        sm.music = self.menu_music
+        sm.music.play()
+        sm.music.volume = 0.3
+        sm.music.loop = True
         sm.right_answers = NumericProperty(0)
         sm.wrong_answers = NumericProperty(0)
         sm.add_widget(StartScreen(name = 'menu'))
@@ -145,4 +156,4 @@ class QuizApp(App):
         return sm
 
 if __name__ == '__main__':
-    QuizApp().run();
+    QuizApp().run()
